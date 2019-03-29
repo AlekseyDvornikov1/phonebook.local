@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^[^www\.].*$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^/?([a-zA-Z0-9\-/]+)(.*)$/?$ index.php?action=$1 [L]
